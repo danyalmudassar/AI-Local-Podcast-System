@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "local-podcast-agent"
+version = "1.0.0"
+description = "A local podcast generation system using AI and neural TTS"
+readme = "README.md"
+authors = [{name = "Your Name", email = "your.email@example.com"}]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "crewai>=1.8.0",
+    "duckduckgo-search>=6.4.2",
+    "fastapi>=0.128.0",
+    "uvicorn>=0.40.0",
+    "pydantic>=2.11.1",
+    "crewai-tools>=1.8.0",
+    "openai>=1.83.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/local-podcast-agent"
+Repository = "https://github.com/yourusername/local-podcast-agent"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["local_podcast_agent*"]
+
+[tool.setuptools.package-data]
+local_podcast_agent = ["*.onnx", "*.json", "*.wav", "*.mp3", "*.ogg"]
